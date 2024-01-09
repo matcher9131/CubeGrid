@@ -1,0 +1,25 @@
+﻿<Window
+    x:Class="CubeGrid.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="clr-namespace:CubeGrid.Views"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Title="CubeGrid" Height="480" Width="720"
+>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" Background="DarkGray">
+            <v:DataInputField HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" />
+        </DockPanel>
+        <GridSplitter VerticalAlignment="Stretch" Width="5" />
+        <DockPanel Grid.Column="1" Background="DarkGray">
+            <Viewbox Stretch="Uniform">
+                <v:CrossSectionGrid />
+            </Viewbox>
+        </DockPanel>
+    </Grid>
+</Window>
